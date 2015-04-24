@@ -1,0 +1,47 @@
+body {
+	background: #7D8A2E;
+	color: #FFC0A9;
+	margin-top: 3%;
+}
+
+.block {
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.header {
+	text-align: center;
+	background: #C9D787;
+	color: white;
+}
+
+.header2 {
+	display: inline-block;
+}
+
+.login-signup {
+	background: #FFFFFF;
+	text-align: center;
+	padding-top: 1%;
+}
+
+.form{
+	background: #FFC0A9;
+	color: #FF8598;
+	text-align: center;
+	display: inline-block;
+	padding-top: 3%;
+	padding-left: 3%;
+	padding-right: 3%;
+	padding-bottom: 3%;
+}
+
+
+input {
+	width: 18em;
+	height: 2em;
+}
+
+h1 {
+	color: #FFC0A9;
+}
