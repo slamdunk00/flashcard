@@ -1,9 +1,9 @@
 <div class="users form">
-<h1>Users</h1>
+<?php echo $this->Html->link( "Add A New User.",   array('action'=>'add'),array('escape' => false) ); ?>
 <table>
     <thead>
         <tr>
-            <th><?php echo $this->Form->checkbox('all', array('name' => 'CheckAll',  'id' => 'CheckAll')); ?></th>
+            <th></th>
             <th><?php echo $this->Paginator->sort('username', 'Username');?>  </th>
             <th><?php echo $this->Paginator->sort('email', 'E-Mail');?></th>
             <th><?php echo $this->Paginator->sort('created', 'Created');?></th>
@@ -32,7 +32,7 @@
                 if( $user['User']['status'] != 0){ 
                     echo $this->Html->link(    "Delete", array('action'=>'delete', $user['User']['id']));}else{
                     echo $this->Html->link(    "Re-Activate", array('action'=>'activate', $user['User']['id']));
-                    }
+                   }
             ?>
             </td>
         </tr>
@@ -44,7 +44,7 @@
 <?php echo $this->Paginator->numbers(array(   'class' => 'numbers'     ));?>
 <?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
 </div>                
-<?php echo $this->Html->link( "Add A New User.",   array('action'=>'add'),array('escape' => false) ); ?>
+
 <br/>
 <?php 
 	// echo $this->Html->link( "Logout",   array('action'=>'logout') );

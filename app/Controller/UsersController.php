@@ -25,7 +25,11 @@ class UsersController extends AppController {
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
                 // $this->Session->setFlash(__('Welcome, '. $this->Auth->user('username')));
-                $this->redirect(array('controller'=>'Cards','action' => 'index'));
+				if($this->Auth->user("role")==="a"){
+					$this->redirect(array('action' => 'index'));
+				}else{
+					$this->redirect(array('controller'=>'Cards','action' => 'index'));
+				}
             } else {
                 $this->Session->setFlash(__('Invalid username or password'));
             }

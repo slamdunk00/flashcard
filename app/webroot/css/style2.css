@@ -1,18 +1,42 @@
+@font-face {
+    font-family: TH_Chakra_Petch;
+    src: url(../fonts/TH_Chakra_Petch.ttf);
+}
+
+@font-face {
+    font-family: TH_Chakra_Petch_Bold;
+    src: url(../fonts/TH_Chakra_Petch_Bold.ttf);
+}
+
 body {
+	font-size: 25px;
 	background: #7D8A2E;
 	color: #FFC0A9;
 	margin-top: 3%;
+	font-family: TH_Chakra_Petch;
 }
+
+body h2{
+	font-family: TH_Chakra_Petch_Bold;
+	font-size: 45px;
+}
+
 
 .block {
 	margin-left: 25%;
 	margin-right: 25%;
 }
 
-.header {
+#header {
 	text-align: center;
-	background: #C9D787;
+	/* background: #C9D787; */
+	background: #FF8598;
 	color: white;
+	font-size: 40px;
+}
+
+#header a{
+	color: grey;
 }
 
 .header2 {
@@ -36,12 +60,17 @@ body {
 	padding-bottom: 3%;
 }
 
-
 input {
-	width: 18em;
-	height: 2em;
+	width: 5em;
+	height: 1.5em;
+}
+
+table, th, td {
+   border: 1px solid black;
 }
 
 h1 {
-	color: #FFC0A9;
+	/* color: #FFC0A9; */
+	color:white;
+	font-size: 50px;
 }

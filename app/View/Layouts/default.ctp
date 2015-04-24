@@ -41,6 +41,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<div id="header">
 			<?php
 				if($this->Session->check('Auth.User')){
+					echo 'Welcome, ';
 					echo $this->Html->link( "   Logout",   array('controller'=>'users','action'=>'logout') );  
 				}
 			?>
