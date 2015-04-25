@@ -42,10 +42,14 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			<?php
 				if($this->Session->check('Auth.User')){
 					echo $this->Html->link( " HOME ",   array('controller'=>'decks','action'=>'index') ); 
+					if( $role == 'a'){
+						echo '|';
+						echo $this->Html->link( " Mange User ",   array('controller'=>'users','action'=>'index') ); 
+					}
 					echo '| ';
-					echo 'Welcome, ';
+					echo 'Welcome, '.$firstname;
 					echo ' | ';
-					echo $this->Html->link( "   Logout",   array('controller'=>'users','action'=>'logout') );  
+					echo $this->Html->link( "   Logout",   array('controller'=>'users','action'=>'logout') ); 
 				}
 			?>
 		</div>

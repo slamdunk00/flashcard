@@ -49,10 +49,8 @@ class UsersController extends AppController {
         $this->set(compact('users'));
     }
  
- 
     public function add() {
         if ($this->request->is('post')) {
-                 
             $this->User->create();
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('The user has been created'));

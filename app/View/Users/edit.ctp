@@ -12,7 +12,7 @@
          
  
         echo $this->Form->input('role', array(
-            'options' => array( 'king' => 'King', 'queen' => 'Queen', 'rook' => 'Rook', 'bishop' => 'Bishop', 'knight' => 'Knight', 'pawn' => 'Pawn')
+            'options' => array( 'a' => 'Admin', 'u' => 'User')
         ));
         echo $this->Form->submit('Edit User', array('class' => 'form-submit',  'title' => 'Click here to add the user') ); 
 ?>

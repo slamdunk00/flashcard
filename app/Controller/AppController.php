@@ -45,12 +45,20 @@ class AppController extends Controller {
  
 	// only allow the login controllers only
 	public function beforeFilter() {
+		
+		if($this->Auth->user('role')=='a'){
+			$this->set("role",$this->Auth->user('role'));//it will set a variable role for your view 
+		}else{
+			$this->set("role",'u');
+		}
+		$this->set("firstname",$this->Auth->user('firstname'));
 		$this->Auth->allow('login');
 	}
 	 
 	public function isAuthorized($user) {
-    // Here is where we should verify the role and give access based on role
+		// Here is where we should verify the role and give access based on role
      
-    return true;
-}
+		return true;
+	}
+	
 }
