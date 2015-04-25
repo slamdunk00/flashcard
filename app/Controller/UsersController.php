@@ -18,7 +18,7 @@ class UsersController extends AppController {
          
         //if already logged-in, redirect
         if($this->Session->check('Auth.User')){
-            $this->redirect(array('controller'=>'Cards','action' => 'index'));      
+            $this->redirect(array('controller'=>'decks','action' => 'index'));      
         }
          
         // if we get the post information, try to authenticate
@@ -28,7 +28,7 @@ class UsersController extends AppController {
 				if($this->Auth->user("role")==="a"){
 					$this->redirect(array('action' => 'index'));
 				}else{
-					$this->redirect(array('controller'=>'Cards','action' => 'index'));
+					$this->redirect(array('controller'=>'decks','action' => 'index'));
 				}
             } else {
                 $this->Session->setFlash(__('Invalid username or password'));

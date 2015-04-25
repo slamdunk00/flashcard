@@ -1,3 +1,3 @@
 <?php
-	echo 'This is Cards/index.ctp';
+	echo 'This is cards index.ctp';
 ?>

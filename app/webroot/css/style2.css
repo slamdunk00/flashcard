@@ -39,6 +39,15 @@ body h2{
 	color: grey;
 }
 
+a {
+	color: black;
+}
+
+#content {
+	color: black;
+	font-size: 30px;
+}
+
 .header2 {
 	display: inline-block;
 }
