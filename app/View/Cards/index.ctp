@@ -3,12 +3,9 @@
 	// echo $this->Html->image('../cardImg/Penguins.jpg', array('width' => '200px','alt'=>'Little Penguins'));
 	// echo '<img src="cardImg/Penguins.jpg" width="40px" height="40px">';
 ?>
-
  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 	<div class="flipper">
-<?php
-// echo $this->Paginator->sort('id','id');
-foreach($cards as $card):
+<?php foreach($cards as $card):
 	echo	'<div class="front">';
 	echo	$card['Card']['front'];
 	// echo $this->Html->image('../cardImg/Penguins.jpg', array('width' => '200px','alt'=>'Little Penguins'));
