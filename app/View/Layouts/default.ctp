@@ -55,7 +55,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				}
 			?>
 		</div>
-		<div id="content" <?php if($this->Session->check('Auth.User')){echo 'style="width:500px;"';}?> >
+		<div id="content" <?php if($this->Session->check('Auth.User')){echo 'style="width:80%;"';}?> >
 
 			<?php echo $this->Session->flash(); ?>
 
@@ -64,10 +64,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		
 		<?php 
 			if($this->Session->check('Auth.User')){
-				echo '<div class="sidebar" style="width:200px;">';
+				echo '<div class="sidebar" style="width:10%;">';
 				echo '<span>Category</span><ul>';
 				foreach ($Last5Cat as $cat):
-				echo '<li><p>'.$this->Html->link( $cat['Category']['name'],   array('controller'=>'decks','action'=>'index', $cat['Category']['id']) ).'</p></li>';
+				echo '<li><p>'.$this->Html->link( $cat['Category']['name'],   array('controller'=>'decks','action'=>'index', '?' => array('cat_id' => $cat['Category']['id'], 'cat_name' => $cat['Category']['name'] ) ) ) .'</p></li>';
 				endforeach;
 				echo '</ul>';
 				echo '<span>Profile</span><ul>';
