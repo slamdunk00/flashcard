@@ -20,7 +20,7 @@ class DecksController extends AppController {
 							)
 			);
 		}else{
-			$topic = "Lastest  decks";
+			$cat_name = "Lastest Deck";
 			$decks = $this->Deck->find('all',
 							array(
 								'order' => array('Deck.id'=>'asc'),
