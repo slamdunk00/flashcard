@@ -3,7 +3,7 @@ class DecksController extends AppController {
 	
 	public $use = [ 'User' ];
  
-    public function index() {
+    public function index( $user_id=null ) {
 
 		$decks = $this->Deck->find('all',
 							array(

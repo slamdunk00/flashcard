@@ -32,6 +32,8 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	
+	var $uses = array('Category');
+	
 	public $components = array(
     'DebugKit.Toolbar',
     'Session',
@@ -51,6 +53,11 @@ class AppController extends Controller {
 		}else{
 			$this->set("role",'u');
 		}
+		
+		$Last5Cat = $this->Category->find('all', array('limit' => 5,'order'=>array('id DESC')));
+		$this->set('Last5Cat', $Last5Cat);
+		$this->set("user_id",$this->Auth->user('id'));
+		
 		$this->set("firstname",$this->Auth->user('firstname'));
 		$this->Auth->allow('login');
 	}
