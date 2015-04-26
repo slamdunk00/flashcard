@@ -69,6 +69,8 @@ class UsersController extends AppController {
             }
  
             $user = $this->User->findById($id);
+			$this->set('user',$user);
+			
             if (!$user) {
                 $this->Session->setFlash('Invalid User ID Provided');
                 $this->redirect(array('action'=>'index'));

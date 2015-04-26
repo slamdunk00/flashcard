@@ -29,6 +29,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		// echo $this->Html->meta('icon');
 		echo $this->Html->css('bootstrap.css');
 		echo $this->Html->css('style2.css');
+		echo $this->Html->css('MyFlip.css');
+		echo $this->Html->script('jquery.js');
+		echo $this->Html->script('flip.js');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -64,7 +67,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				echo '<div class="sidebar" style="width:200px;">';
 				echo '<span>Category</span><ul>';
 				foreach ($Last5Cat as $cat):
-				echo '<li><p>'.$this->Html->link( $cat['Category']['name'],   array('controller'=>'cards','action'=>'index', $cat['Category']['id']) ).'</p></li>';
+				echo '<li><p>'.$this->Html->link( $cat['Category']['name'],   array('controller'=>'decks','action'=>'index', $cat['Category']['id']) ).'</p></li>';
 				endforeach;
 				echo '</ul>';
 				echo '<span>Profile</span><ul>';
