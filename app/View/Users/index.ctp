@@ -1,5 +1,4 @@
-<div class="users form">
-<?php echo $this->Html->link( "Add A New User.",   array('action'=>'add'),array('escape' => false) ); ?>
+<div class="users-list">
 <table>
     <thead>
         <tr>
@@ -10,7 +9,6 @@
             <th><?php echo $this->Paginator->sort('modified','Last Update');?></th>
             <th><?php echo $this->Paginator->sort('role','Role');?></th>
             <th><?php echo $this->Paginator->sort('status','Status');?></th>
-            <th>Actions</th>
         </tr>
     </thead>
     <tbody>                       
@@ -26,24 +24,25 @@
             <td style="text-align: center;"><?php echo $this->Time->niceShort($user['User']['modified']); ?></td>
             <td style="text-align: center;"><?php echo $user['User']['role']; ?></td>
             <td style="text-align: center;"><?php echo $user['User']['status']; ?></td>
-            <td >
-            <?php echo $this->Html->link(    "Edit",   array('action'=>'edit', $user['User']['id']) ); ?> | 
+            <?php /* echo $this->Html->link(    "Edit",   array('action'=>'edit', $user['User']['id']) ); */ ?>  
             <?php
-                if( $user['User']['status'] != 0){ 
+                /* if( $user['User']['status'] != 0){ 
                     echo $this->Html->link(    "Delete", array('action'=>'delete', $user['User']['id']));}else{
                     echo $this->Html->link(    "Re-Activate", array('action'=>'activate', $user['User']['id']));
-                   }
+                   } */
             ?>
-            </td>
         </tr>
         <?php endforeach; ?>
         <?php unset($user); ?>
     </tbody>
 </table>
-<?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
+<span style="margin-right:10px;"><?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?></span>
 <?php echo $this->Paginator->numbers(array(   'class' => 'numbers'     ));?>
-<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
-</div>                
+<span style="margin-left:10px;"><?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?></span><br/>
+
+<span><u><?php echo $this->Html->link( "Add A New User",   array('action'=>'add'),array('escape' => false) ); ?></u></span>
+
+</div>
 
 <?php 
 	// echo $this->Html->link( "Logout",   array('action'=>'logout') );

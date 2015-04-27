@@ -10,17 +10,21 @@
         echo $this->Form->input('password_update', array( 'label' => 'New Password (leave empty if you do not want to change)', 'maxLength' => 255, 'type'=>'password','required' => 0));
         echo $this->Form->input('password_confirm_update', array('label' => 'Confirm New Password *', 'maxLength' => 255, 'title' => 'Confirm New password', 'type'=>'password','required' => 0));
 		
-		if($user['users']['role']=='a'){
+		/* if($user['users']['role']=='a'){
 			echo $this->Form->input('role', array(
 					'options' => array( 'a' => 'Admin', 'u' => 'User')
 			));
-		}
+		} */
 		echo $this->Form->submit('Edit User', array('class' => 'form-submit',  'title' => 'Click here to add the user') ); 
 ?>
     </fieldset>
 <?php echo $this->Form->end(); ?>
 </div>
 <br/>
+
 <?php 
+
+echo $this->Html->link( 'Back to "Manage user"',   array('controller'=>'users','action'=>'index') );
+echo '<br/>';
 echo $this->Html->link( "Logout",   array('action'=>'logout') ); 
 ?>

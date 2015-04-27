@@ -79,7 +79,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			}
 		?>
 
-		<div id="content">
+		<div id="content" <?php if($this->Session->check('Auth.User')){echo 'style="width:80%;"';}?>>
 
 			<?php echo $this->Session->flash(); ?>
 

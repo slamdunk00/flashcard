@@ -3,7 +3,7 @@
 	// echo $this->Html->image('../cardImg/Penguins.jpg', array('width' => '200px','alt'=>'Little Penguins'));
 	// echo '<img src="cardImg/Penguins.jpg" width="40px" height="40px">';
 ?>
- <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+ <div class="flip-container" ontouchstart="this.classList.toggle('hover');" id="card-container">
 	<div class="flipper">
 <?php foreach($cards as $card):
 	echo	'<div class="front">';
@@ -18,6 +18,6 @@
 	</div>
 </div>
 
-<?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?>
+<span style="margin-right:10px;"><?php echo $this->Paginator->prev('<< ' . __('previous', true), array(), null, array('class'=>'disabled'));?></span>
 <?php echo $this->Paginator->numbers(array(   'class' => 'numbers'     ));?>
-<?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+<span style="margin-left:10px;"><?php echo $this->Paginator->next(__('next', true) . ' >>', array(), null, array('class' => 'disabled'));?></span>
