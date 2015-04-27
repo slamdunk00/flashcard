@@ -39,7 +39,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	?>
 </head>
 <body>
-	<div id="container">
+	<div class="container-fluid" id="container">
 	<div class="text-center">
 		<div id="header">
 			<?php
@@ -55,16 +55,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				}
 			?>
 		</div>
-		<div id="content" <?php if($this->Session->check('Auth.User')){echo 'style="width:80%;"';}?> >
-
-			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
-		</div>
 		
 		<?php 
 			if($this->Session->check('Auth.User')){
-				echo '<div class="sidebar" style="width:10%;">';
+				echo '<div id="sidebar">';
 				echo '<span>Category</span><ul>';
 				foreach ($Last5Cat as $cat):
 				echo '<li><p>'.$this->Html->link( $cat['Category']['name'],   array('controller'=>'decks','action'=>'index', '?' => array('cat_id' => $cat['Category']['id'], 'cat_name' => $cat['Category']['name'] ) ) ) .'</p></li>';
@@ -84,6 +78,15 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				echo '</ul></div>';
 			}
 		?>
+
+		<div id="content">
+
+			<?php echo $this->Session->flash(); ?>
+
+			<?php echo $this->fetch('content'); ?>
+		</div>
+		
+		
 		</div>
 		
 		<div id="footer">

@@ -1,7 +1,7 @@
 <?php
 class CardsController extends AppController {
 	
-	public $use = [ 'User' ];
+	var $uses = [ 'User' ];
  
     public function index( $deck_id=null ){
 		
