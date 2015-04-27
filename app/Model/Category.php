@@ -47,5 +47,8 @@ class Category extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-
+    public function getCategory() { //ดึงข้อมูลหมวดสินค้า
+        return $this->find('list', array('fields' => array('Category.id', 'Category.name'), 'order' => 'Category.name ASC')
+        );
+    }
 }
