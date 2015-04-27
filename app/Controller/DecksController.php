@@ -39,6 +39,9 @@ class DecksController extends AppController {
     }
 	
 	public function add(){
+			$deck = $this->Deck->find('all');
+			$this->set('deck', $deck); 
+			
 			
 			$categories = $this->Category->getCategory(); 
 			$this->set('category', $categories); 

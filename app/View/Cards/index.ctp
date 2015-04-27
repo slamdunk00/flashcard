@@ -7,17 +7,17 @@
 	
 	<tr>
 	<td>Deck Name</td>
-	<td>deck</td>
+	<td><?php echo $decks['Deck']['name'] ?></td>
 	</tr>
 	
 	<tr>
 	<td>Deck Description</td>
-	<td>deck</td>
+	<td><?php echo $decks['Deck']['description'] ?></td>
 	</tr>
 	
 	<tr>
 	<td>Deck Category</td>
-	<td>deck</td>
+	<td><?php echo $decks['Deck']['name'] ?></td>
 	</tr>
 	</table>
 	
