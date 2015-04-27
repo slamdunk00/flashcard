@@ -18,14 +18,18 @@ class UsersController extends AppController {
          
         //if already logged-in, redirect
         if($this->Session->check('Auth.User')){
-            $this->redirect(array('controller'=>'Cards','action' => 'index'));      
+            $this->redirect(array('controller'=>'decks','action' => 'index'));      
         }
          
         // if we get the post information, try to authenticate
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
                 // $this->Session->setFlash(__('Welcome, '. $this->Auth->user('username')));
-                $this->redirect(array('controller'=>'Cards','action' => 'index'));
+				if($this->Auth->user("role")==="a"){
+					$this->redirect(array('action' => 'index'));
+				}else{
+					$this->redirect(array('controller'=>'decks','action' => 'index'));
+				}
             } else {
                 $this->Session->setFlash(__('Invalid username or password'));
             }
@@ -45,10 +49,8 @@ class UsersController extends AppController {
         $this->set(compact('users'));
     }
  
- 
     public function add() {
         if ($this->request->is('post')) {
-                 
             $this->User->create();
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('The user has been created'));
@@ -67,6 +69,8 @@ class UsersController extends AppController {
             }
  
             $user = $this->User->findById($id);
+			$this->set('user',$user);
+			
             if (!$user) {
                 $this->Session->setFlash('Invalid User ID Provided');
                 $this->redirect(array('action'=>'index'));

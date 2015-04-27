@@ -32,6 +32,8 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	
+	var $uses = array('Category');
+	
 	public $components = array(
     'DebugKit.Toolbar',
     'Session',
@@ -45,12 +47,25 @@ class AppController extends Controller {
  
 	// only allow the login controllers only
 	public function beforeFilter() {
+		
+		if($this->Auth->user('role')=='a'){
+			$this->set("role",$this->Auth->user('role'));//it will set a variable role for your view 
+		}else{
+			$this->set("role",'u');
+		}
+		
+		$Last5Cat = $this->Category->find('all', array('limit' => 5,'order'=>array('id DESC')));
+		$this->set('Last5Cat', $Last5Cat);
+		$this->set("user_id",$this->Auth->user('id'));
+		
+		$this->set("firstname",$this->Auth->user('firstname'));
 		$this->Auth->allow('login');
 	}
 	 
 	public function isAuthorized($user) {
-    // Here is where we should verify the role and give access based on role
+		// Here is where we should verify the role and give access based on role
      
-    return true;
-}
+		return true;
+	}
+	
 }

@@ -100,6 +100,7 @@ Configure::write('Dispatcher.filters', array(
 
 CakePlugin::loadAll();
 
+
 /**
  * Configures default file logging options
  */
