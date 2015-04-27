@@ -39,7 +39,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	?>
 </head>
 <body>
-	<div id="container">
+	<div class="container-fluid" id="container">
 	<div class="text-center">
 		<div id="header">
 			<?php
@@ -55,13 +55,42 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				}
 			?>
 		</div>
+<<<<<<< HEAD
 		<div id="content" <?php if($this->Session->check('Auth.User')){echo 'style="width:80%;"';}?> >
+=======
+		
+		<?php 
+			if($this->Session->check('Auth.User')){
+				echo '<div id="sidebar">';
+				echo '<span>Category</span><ul>';
+				foreach ($Last5Cat as $cat):
+				echo '<li><p>'.$this->Html->link( $cat['Category']['name'],   array('controller'=>'decks','action'=>'index', '?' => array('cat_id' => $cat['Category']['id'], 'cat_name' => $cat['Category']['name'] ) ) ) .'</p></li>';
+				endforeach;
+				echo '</ul>';
+				echo '<span>Profile</span><ul>';
+				
+				echo'<li><p>'.$this->Html->link( " HOME ",   array('controller'=>'decks','action'=>'index') ).'</p></li>'; 
+				if( $role == 'a'){
+					echo '<li><p>'.$this->Html->link( " Mange User ",   array('controller'=>'users','action'=>'index') ).'</p></li>'; 
+				}
+				echo '<li><p>'.$this->Html->link( " Add New Deck ",   array('controller'=>'decks','action'=>'add') ).'</p></li>';
+				echo '<li><p>'.$this->Html->link( " All My Deck ",   array('controller'=>'decks','action'=>'index', $user_id ) ).'</p></li>';
+				echo '<li><p>'.$this->Html->link( " Favourite ",   array('controller'=>'decks','action'=>'favourite', $user_id ) ).'</p></li>';
+				echo '<li><p>'.$this->Html->link( " Achievement ",   array('controller'=>'achievements','action'=>'index', $user_id ) ).'</p></li>';
+				echo '<li><p>'.$this->Html->link( " Edit Profile ",   array('controller'=>'users','action'=>'edit', $user_id ) ).'</p></li>';
+				echo '</ul></div>';
+			}
+		?>
+
+		<div id="content" <?php if($this->Session->check('Auth.User')){echo 'style="width:80%;"';}?>>
+>>>>>>> origin/master
 
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		
+<<<<<<< HEAD
 		<?php 
 			if($this->Session->check('Auth.User')){
 				echo '<div class="sidebar" style="width:10%;">';
@@ -84,6 +113,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				echo '</ul></div>';
 			}
 		?>
+=======
+		
+>>>>>>> origin/master
 		</div>
 		
 		<div id="footer">

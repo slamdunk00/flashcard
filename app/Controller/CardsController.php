@@ -1,11 +1,18 @@
 <?php
 class CardsController extends AppController {
 	
+<<<<<<< HEAD
 	//public $use = [ 'User' ];
  
     public function index( $deck_id=null ){
 		$deck_id = $this->params['url']['deck_id'];
 		$this->set('deck_id', $deck_id);
+=======
+	/* var $uses = [ 'User' ]; */
+ 
+    public function index( $deck_id=null ){
+		
+>>>>>>> origin/master
 		$this->paginate = array(
 								'order' => array('Card.id'=>'asc'),
 								'conditions' => [
@@ -15,10 +22,13 @@ class CardsController extends AppController {
 							);
 		$cards = $this->paginate('Card');
         $this->set(compact('cards'));
+<<<<<<< HEAD
 		
 
 
 		
+=======
+>>>>>>> origin/master
 	}
 	
 	public function add(){

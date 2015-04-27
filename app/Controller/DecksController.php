@@ -36,6 +36,7 @@ class DecksController extends AppController {
     }
 	
 	public function add(){
+<<<<<<< HEAD
 			$categories = $this->Category->getCategory(); 
 			$this->set('category', $categories); 
 	        if ($this->request->is('post')) {
@@ -82,5 +83,9 @@ class DecksController extends AppController {
 
 	
 
+=======
+		
+	}
+>>>>>>> origin/master
 }
 ?>

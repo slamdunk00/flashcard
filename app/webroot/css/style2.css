@@ -8,6 +8,7 @@
     src: url(../fonts/TH_Chakra_Petch_Bold.ttf);
 }
 
+<<<<<<< HEAD
 body {
 	font-size: 25px;
 	background: #7D8A2E;
@@ -16,6 +17,29 @@ body {
 	font-family: TH_Chakra_Petch;
 	width:90%;
 	margin-left:5%;
+=======
+html{
+	background: #7D8A2E;
+}
+
+body {
+	font-size: 25px;
+	/* background: red; */
+	color: white;
+	margin-top: 10px;
+	font-family: TH_Chakra_Petch;
+	width:90%;
+	margin-left:5%;
+}
+
+body h2{
+	font-family: TH_Chakra_Petch_Bold;
+	font-size: 45px;
+}
+
+#container{
+	padding:0px;
+>>>>>>> origin/master
 }
 
 body h2{
@@ -31,8 +55,13 @@ body h2{
 
 #header {
 	text-align: center;
+<<<<<<< HEAD
 	/* background: #C9D787; */
 	background: #FF8598;
+=======
+	background: #C9D787; 
+	/* background: #FF8598; */
+>>>>>>> origin/master
 	color: white;
 	font-size: 40px;
 }
@@ -46,8 +75,39 @@ a {
 }
 
 #content {
+<<<<<<< HEAD
 	color: black;
 	font-size: 30px;
+=======
+	padding-top:10px;
+	padding-bottom:10px;
+	width:100%;
+	color: black;
+	font-size: 30px;
+	float:right;
+}
+
+#content h1{
+	font-family:TH_Chakra_Petch_Bold;
+	color:#7D8A2E;
+	border-style: dotted;
+    border-width: 5px;
+	margin-left:32%;
+	margin-right:32%;
+}
+
+#sidebar{
+	background: #FF8598;
+	padding-top: 10px;
+	padding-bottom:10px;
+	width:20%;
+	float:right;
+}
+
+#sidebar a{
+	font-size: 30px;
+	margin-right:10%;
+>>>>>>> origin/master
 }
 
 .header2 {
@@ -71,6 +131,31 @@ a {
 	padding-bottom: 3%;
 }
 
+<<<<<<< HEAD
+=======
+table{
+	color:black;
+}
+
+.users-list{
+	background: #FFC0A9;
+	color: #FF8598;
+	text-align: center;
+	display: inline-block;
+	margin-left:10px;
+	margin-right:10px;
+	padding-top: 20px;
+	padding-left: 3%;
+	padding-right: 3%;
+	padding-bottom: 20px;
+}
+
+.users-list a{
+	font-family:TH_Chakra_Petch_Bold;
+	color:#FF8598;
+}
+
+>>>>>>> origin/master
 input {
 	width: 5em;
 	height: 1.5em;
@@ -84,4 +169,16 @@ h1 {
 	/* color: #FFC0A9; */
 	color:white;
 	font-size: 50px;
+<<<<<<< HEAD
+=======
+}
+
+span{
+	font-size: 40px;;
+}
+
+#card-container{
+	margin-left: auto ;
+	margin-right: auto ;
+>>>>>>> origin/master
 }
